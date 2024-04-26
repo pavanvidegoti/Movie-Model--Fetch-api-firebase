@@ -1,0 +1,105 @@
+body{
+    background-image:linear-gradient( rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(https://assets.nflxext.com/ffe/siteui/vlv3/e89c9679-2f5f-491d-924c-c58924a8ee4b/8ec27a1d-02ce-4489-b320-a95106906f5d/IN-en-20221121-popsignuptwoweeks-perspective_alpha_website_medium.jpg);
+}
+.logo:link, logo:visited{
+    display: inline-block;
+}
+.logo > img {
+    width: 100%;
+}
+.movieContainer{
+    height: 450px;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid;
+
+}
+figure > img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.heading{
+    position: absolute;
+    color: whitesmoke;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    background-color: rgba(2, 2, 21, 0.8);
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+
+}
+.overviewSection{
+    background-color: rgba(2, 2, 21, 0.8);
+    color: rgb(239, 229, 229);
+    padding: 20px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    transform: translateY(100%);
+    transition: all .3s ease-in-out;
+}
+.movieContainer:hover .overviewSection{
+    transform: translateY(0);
+}
+.myModal{
+    width: 60%;
+    right: 20%;
+    position: fixed;
+    top:12vh;
+    display: none;
+    color: black;
+}
+.myModal.active{
+    display: block;
+    animation: fade-slide-down 0.3s ease-in;
+}
+.backDrop{
+    position: fixed;
+    background-color: rgba(0,0,0,.5);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: none;
+}
+.backDrop.active{
+    display: block;
+    animation: fade-in 0.3s ease-in-out;
+}
+.movieClose{
+    cursor: pointer;
+}
+@keyframes fade-slide-down {
+    from{
+        margin-top: -50px;
+        opacity: 0;
+    }
+    to{
+        margin-top: 0;
+        opacity: 1;
+    }
+}
+keyframes fade-in {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255,255,255,.6);
+}

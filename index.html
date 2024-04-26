@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Model Task </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.7/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+   <header>
+    <div class="container-fluid p-4">
+        <div class="row">
+            <div class="col-md-6">
+                <a href="index.html" class="logo">
+                    <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg" alt="tmdb" target="tmdb" >
+                </a>
+            </div>
+            <div class="col-md-6">
+                <div class="text-right">
+                    <button class="btn btn-warning" type="button" id="showModalBtn">Add Movies</button>
+                </div>
+            </div>
+        </div>
+    </div>
+   </header>
+   <div class="container">
+    <div class="row" id="MovieBody">
+        <!-- <div class="col-md-4">
+            <div class="card">
+                <figure class="movieContainer">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMDdlODdmODItZDAxNi00MjExLWFjOGItMGY3MzFjYzU4NDM3XkEyXkFqcGdeQXVyMTUzNTgzNzM0._V1_FMjpg_UX1000_.jpg" alt="Yodha" target="Yodha">
+                    <figcaption>
+                        <div class="heading">
+                            <div class="row">
+                               <div class="col-sm-10">
+                                <h4>
+                                    Yodha
+                                </h4>
+                               </div>
+                               <div class="col-sm-2">
+                                    <span class="badge badge-success">5</span>
+                               </div>
+                            </div>
+                        </div>
+                        <div class="overviewSection">
+                            <h5>
+                                Overview :
+                            </h5>
+                            <p>
+                                asjdkfdkjffjdkjfkjfsljdjf
+                            </p>
+                            <div class="d-flex justify-content-between">
+                                <button class="btn btn-primary" onclick="onMovieEdit(this)">Edit</button>
+                                <button class="btn btn-danger" onclick="onMovieDelete(this)">Delete</button>
+                            </div>
+                            
+                        </div>
+                    </figcaption>
+                </figure>
+            </div>
+        </div> -->
+    </div>
+   </div>
+   <div class="backDrop movieClose" id="backDrop">
+
+   </div>
+   <div class="myModal" id="myModal">
+    <form id="movieForm">
+        <div class="card">
+            <div class="card-header">
+                <h3>
+                    Add Movie Info
+
+                    <i class="fa-regular fa-circle-xmark float-right text-danger movieClose"></i>
+                </h3>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" required placeholder="Name of Movie..." id="title" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="imgUrl">Image Url</label>
+                    <input type="text" required placeholder="Image Url.." id="imgUrl" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="overview">Overview</label>
+                    <textarea type="text" required placeholder="Overview.." id="overview" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="rating">Rating</label>
+                    <select type="text" required  id="rating" class="form-control">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="card-footer text-right">
+                <button class="btn btn-primary" type="submit" id="submitBtn">Add</button>
+                <button class="btn btn-info d-none" type="button" id="updateBtn">Update</button>
+                <button class="btn btn-danger movieClose"  type="button">Cancel</button>
+            </div>
+        </div>
+    </form>
+   </div>
+   <div class="loader d-none" id="loader">
+    <div class="spinner-border text-info" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+   </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.7/dist/sweetalert2.all.min.js"></script>
+    <script src="./assets/js/app.js"></script>
+</body>
+</html>
